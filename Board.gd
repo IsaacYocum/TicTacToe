@@ -95,9 +95,10 @@ func determineIfGameover():
 		
 	# Checks for a draw
 	if gameIsDraw():
-		winner = "."
-		gameOver = true
-		
+		if !gameOver:
+			winner = "."
+			gameOver = true
+			
 	# Actions performed if the game has ended
 	if gameOver:
 		print("Winner: ", winner)

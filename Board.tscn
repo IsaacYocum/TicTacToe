@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Board.gd" type="Script" id=1]
 [ext_resource path="res://O.png" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://WinScreen.gd" type="Script" id=7]
 [ext_resource path="res://WinScreenOverlay.png" type="Texture" id=8]
 [ext_resource path="res://drawsLabel.gd" type="Script" id=9]
+[ext_resource path="res://resetButton.gd" type="Script" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 64, 64 )
@@ -175,9 +176,9 @@ texture = ExtResource( 3 )
 
 [node name="oWinsLabel" type="Label" parent="."]
 margin_left = 320.0
-margin_top = 48.0
+margin_top = 64.0
 margin_right = 376.0
-margin_bottom = 64.0
+margin_bottom = 80.0
 text = "O Wins: "
 script = ExtResource( 4 )
 __meta__ = {
@@ -186,9 +187,9 @@ __meta__ = {
 
 [node name="xWinsLabel" type="Label" parent="."]
 margin_left = 320.0
-margin_top = 24.0
+margin_top = 40.0
 margin_right = 376.0
-margin_bottom = 40.0
+margin_bottom = 56.0
 text = "X Wins: "
 script = ExtResource( 6 )
 __meta__ = {
@@ -207,9 +208,9 @@ __meta__ = {
 
 [node name="drawsLabel" type="Label" parent="."]
 margin_left = 320.0
-margin_top = 72.0
+margin_top = 88.0
 margin_right = 376.0
-margin_bottom = 88.0
+margin_bottom = 104.0
 script = ExtResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -253,3 +254,15 @@ region_enabled = true
 region_rect = Rect2( 0, 0, 100, 100 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="WinScreen"]
+
+[node name="resetButton" type="Button" parent="."]
+margin_left = 320.0
+margin_top = 8.0
+margin_right = 376.0
+margin_bottom = 28.0
+text = "Reset"
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="resetButton" to="resetButton" method="_on_resetButton_pressed"]
